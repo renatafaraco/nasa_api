@@ -1,0 +1,50 @@
+[
+  {
+    "testCaseName": "should retrieve the first 10 Mars photos made by \"Curiosity\" on 1000 Martian sol.",
+    "method": "GET",
+    "apiKey": "{{valid}}",
+    "rover": "curiosity",
+    "parameterType": "sol",
+    "parameterValue": "1000",
+    "page": "1",
+    "perPage": 10,
+    "expectedStatusCode": 200,
+    "success": true
+  },
+  {
+    "testCaseName": "should retrieve the first 10 Mars photos made by \"Curiosity\" on Earth date equal to 1000 Martian sol.",
+    "method": "GET",
+    "apiKey": "{{valid}}",
+    "rover": "curiosity",
+    "parameterType": "earth_date",
+    "parameterValue": "2015-05-30",
+    "page": "1",
+    "perPage": 10,
+    "expectedStatusCode": 200,
+    "success": true
+  },
+  {
+    "testCaseName": "should retrieve the first 15 Mars photos made by \"Curiosity\" on 1000 Martian sol.",
+    "method": "GET",
+    "apiKey": "{{valid}}",
+    "rover": "curiosity",
+    "parameterType": "sol",
+    "parameterValue": "1000",
+    "page": "2",
+    "perPage": 15,
+    "expectedStatusCode": 200,
+    "success": true
+  },
+  {
+    "testCaseName": "should not retrieve results due to invalid API_KEY",
+    "method": "GET",
+    "apiKey": "invalid",
+    "rover": "curiosity",
+    "parameterType": "earth_date",
+    "parameterValue": "2015-05-30",
+    "page": "2",
+    "perPage": 15,
+    "expectedStatusCode": 403,
+    "success": false
+  }
+]
